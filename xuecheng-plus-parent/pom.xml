@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.15</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.xuecheng</groupId>
+    <artifactId>xuecheng-plus-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>xuecheng-plus-parent</name>
+    <description>XueCheng Plus Parent Project</description>
+
+    <properties>
+        <!-- ========================= -->
+        <!-- Java -->
+        <!-- ========================= -->
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- ========================= -->
+        <!-- Spring Ecosystem -->
+        <!-- ========================= -->
+        <spring-cloud.version>2025.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2025.0.0.0</spring-cloud-alibaba.version>
+
+        <!-- ========================= -->
+        <!-- 以下仅保留版本管理,当前父工程不引入 ========================= -->
+
+        <!-- Lombok -->
+        <lombok.version>1.18.38</lombok.version>
+        <!-- MapStruct -->
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <!-- MyBatis Plus -->
+        <mybatis-plus.version>3.5.12</mybatis-plus.version>
+        <!-- MySQL Driver -->
+        <mysql.version>9.3.0</mysql.version>
+        <!-- Druid -->
+        <druid.version>1.2.27</druid.version>
+        <!-- Fastjson2 -->
+        <fastjson2.version>2.0.59</fastjson2.version>
+        <!-- MinIO -->
+        <minio.version>8.5.17</minio.version>
+        <!-- Elasticsearch -->
+        <elasticsearch.version>8.19.2</elasticsearch.version>
+        <!-- XXL Job -->
+        <xxl-job.version>3.2.0</xxl-job.version>
+        <!-- SpringDoc -->
+        <springdoc.version>2.8.9</springdoc.version>
+        <!-- Commons Lang3 -->
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+        <!-- Guava -->
+        <guava.version>33.5.0-jre</guava.version>
+        <!-- OkHttp -->
+        <okhttp.version>5.1.0</okhttp.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!-- Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Java21 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.14.0</version>
+                    <configuration>
+                        <release>21</release>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+
+                <!-- Resources -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.3.1</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
